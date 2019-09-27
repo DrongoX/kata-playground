@@ -2,7 +2,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class EmptyTest {
+public class RPNCalculatorTest {
     @Test
     public void calculate_with5_shouldReturn5()
     {
@@ -40,5 +40,31 @@ public class EmptyTest {
 
         //Then
         Assert.assertEquals(9, result);
+    }
+
+    @Test
+    public void calculate_with5And3AndPlus_shouldReturn8()
+    {
+        //Given
+        String entry = "5 3 +";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(8, result);
+    }
+
+    @Test
+    public void calculate_with9And11AndPlus_shouldReturn20()
+    {
+        //Given
+        String entry = "9 11 +";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(20, result);
     }
 }
