@@ -7,12 +7,16 @@ public class RPNCalculator {
             return getFirstValue(entry);
         }
 
-        if(isDivisionOperator(entry)) {
+        if (isDivisionOperator(entry)) {
             return getFirstValue(entry) / getSecondValue(entry);
+        }
+        if (isMultiplicationOperator(entry)) {
+            return getFirstValue(entry) * getSecondValue(entry);
         }
 
         return getFirstValue(entry) + getSecondValue(entry);
     }
+
 
     private static int getSecondValue(String entry) {
         return parseInt(entry.split(" ")[1]);
@@ -24,6 +28,10 @@ public class RPNCalculator {
 
     private static boolean isDivisionOperator(String entry) {
         return entry.split(" ")[2].equals("/");
+    }
+
+    private static boolean isMultiplicationOperator(String entry) {
+        return entry.split(" ")[2].equals("*");
     }
 
     private static boolean isSingleValue(final String entry) {

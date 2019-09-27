@@ -93,4 +93,30 @@ public class RPNCalculatorTest {
         //Then
         Assert.assertEquals(3, result);
     }
+
+    @Test
+    public void calculate_with10And3AndMultiplication_shouldReturn30()
+    {
+        //Given
+        String entry = "10 3 *";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(30, result);
+    }
+
+    @Test
+    public void calculate_with7And3AndMultiplication_shouldReturn21()
+    {
+        //Given
+        String entry = "7 3 *";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(21, result);
+    }
 }
