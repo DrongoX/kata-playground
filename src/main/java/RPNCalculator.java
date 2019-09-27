@@ -2,17 +2,31 @@ import static java.lang.Integer.parseInt;
 
 public class RPNCalculator {
     public static int calculate(String entry) {
-        final String[] splitEntry = entry.split(" ");
 
-        if (isSingleValue(splitEntry)) {
-            return parseInt(splitEntry[0]);
+        if (isSingleValue(entry)) {
+            return getFirstValue(entry);
         }
 
-        return parseInt(splitEntry[0])
-                + parseInt(splitEntry[1]);
+        if(isDivisionOperator(entry)) {
+            return getFirstValue(entry) / getSecondValue(entry);
+        }
+
+        return getFirstValue(entry) + getSecondValue(entry);
     }
 
-    private static boolean isSingleValue(final String[] splitEntry) {
-        return 1 == splitEntry.length;
+    private static int getSecondValue(String entry) {
+        return parseInt(entry.split(" ")[1]);
+    }
+
+    private static int getFirstValue(String entry) {
+        return parseInt(entry.split(" ")[0]);
+    }
+
+    private static boolean isDivisionOperator(String entry) {
+        return entry.split(" ")[2].equals("/");
+    }
+
+    private static boolean isSingleValue(final String entry) {
+        return 1 == entry.split(" ").length;
     }
 }

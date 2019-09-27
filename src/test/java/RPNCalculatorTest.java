@@ -67,4 +67,30 @@ public class RPNCalculatorTest {
         //Then
         Assert.assertEquals(20, result);
     }
+
+    @Test
+    public void calculate_with8And2AndDivision_shouldReturn4()
+    {
+        //Given
+        String entry = "8 2 /";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(4, result);
+    }
+
+    @Test
+    public void calculate_with10And3AndDivision_shouldReturn3()
+    {
+        //Given
+        String entry = "10 3 /";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(3, result);
+    }
 }
