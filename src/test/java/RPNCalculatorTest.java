@@ -119,4 +119,17 @@ public class RPNCalculatorTest {
         //Then
         Assert.assertEquals(21, result);
     }
+
+    @Test
+    public void calculate_with7And3AndSubtraction_shouldReturn4()
+    {
+        //Given
+        String entry = "7 3 -";
+
+        //When
+        int result = RPNCalculator.calculate(entry);
+
+        //Then
+        Assert.assertEquals(4, result);
+    }
 }

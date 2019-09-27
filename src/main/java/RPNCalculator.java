@@ -1,3 +1,5 @@
+import java.rmi.UnexpectedException;
+
 import static java.lang.Integer.parseInt;
 
 public class RPNCalculator {
@@ -7,16 +9,26 @@ public class RPNCalculator {
             return getFirstValue(entry);
         }
 
-        if (isDivisionOperator(entry)) {
-            return getFirstValue(entry) / getSecondValue(entry);
-        }
-        if (isMultiplicationOperator(entry)) {
-            return getFirstValue(entry) * getSecondValue(entry);
-        }
+        Operator operator = getOperator(entry);
 
-        return getFirstValue(entry) + getSecondValue(entry);
+        return operator.execute(getFirstValue(entry), getSecondValue(entry));
     }
 
+    private static Operator getOperator(String entry) {
+        final String operator = entry.split(" ")[2];
+        switch(operator){
+            case "/":
+                return Operator.DIVISION;
+            case "*":
+                return Operator.MULTIPLICATION;
+            case "-":
+                return Operator.SUBTRACTION;
+            case "+":
+                return Operator.ADDITION;
+            default:
+                throw new IllegalArgumentException(String.format("Unknown operator %s", operator));
+        }
+    }
 
     private static int getSecondValue(String entry) {
         return parseInt(entry.split(" ")[1]);
@@ -28,6 +40,10 @@ public class RPNCalculator {
 
     private static boolean isDivisionOperator(String entry) {
         return entry.split(" ")[2].equals("/");
+    }
+
+    private static boolean isSubtractionOperator(String entry) {
+        return entry.split(" ")[2].equals("-");
     }
 
     private static boolean isMultiplicationOperator(String entry) {
