@@ -32,4 +32,25 @@ public class RPNCalculatorTest {
         int result = calculator.calculate(input);
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void should_return_3_when_1_2_plus() {
+        String input = "1 2 +";
+        int expected = 3;
+        RPNCalculator calculator = new RPNCalculator();
+
+        int result = calculator.calculate(input);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void should_return_5_when_2_3_plus() {
+        String input = "2 3 +";
+        int expected = 5;
+        RPNCalculator calculator = new RPNCalculator();
+
+        int result = calculator.calculate(input);
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
 }
