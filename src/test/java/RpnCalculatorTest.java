@@ -30,4 +30,32 @@ public class RpnCalculatorTest {
         // then
         assertThat(result).isEqualTo(output);
     }
+
+    @Test
+    void should_return_5_when_given_2_plus_3() {
+        // given
+        final String input = "2 3 +";
+        final int output = 5;
+
+        // when
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        int result = rpnCalculator.calculate(input);
+
+        // then
+        assertThat(result).isEqualTo(output);
+    }
+
+    @Test
+    void should_return_3_when_given_6_minus_3() {
+        // given
+        final String input = "6 3 -";
+        final int output = 3;
+
+        // when
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        int result = rpnCalculator.calculate(input);
+
+        // then
+        assertThat(result).isEqualTo(output);
+    }
 }
