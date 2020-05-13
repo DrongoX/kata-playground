@@ -7,4 +7,5 @@ public class EmptyTest {
     {
         Assertions.fail("You'd better start writing code!");
     }
+
 }
