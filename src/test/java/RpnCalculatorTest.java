@@ -38,4 +38,28 @@ public class RpnCalculatorTest {
         Integer expected = 117;
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @Test
+    void should_return_7_for_addition_of_2_and_5(){
+        // Given
+        String input = "2 5 +";
+        // When
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        Integer result = rpnCalculator.calculate(input);
+        // Then
+        Integer expected = 7;
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    void should_return_14_for_addition_of_8_and_6(){
+        // Given
+        String input = "8 6 +";
+        // When
+        RpnCalculator rpnCalculator = new RpnCalculator();
+        Integer result = rpnCalculator.calculate(input);
+        // Then
+        Integer expected = 14;
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
