@@ -2,9 +2,7 @@ package uk.zinch.marsrover
 
 import spock.lang.Specification
 
-import static uk.zinch.marsrover.Orientation.NORTH
-import static uk.zinch.marsrover.Orientation.SOUTH
-import static uk.zinch.marsrover.Orientation.WEST
+import static uk.zinch.marsrover.Orientation.*
 
 class MarsRoverSpec extends Specification {
 
@@ -19,7 +17,9 @@ class MarsRoverSpec extends Specification {
         where:
         startX | startY | startingOrientation | newX | newY | newOrientation
         5      | 5      | NORTH               | 5    | 6    | NORTH
+        3      | 2      | NORTH               | 3    | 3    | NORTH
         5      | 5      | SOUTH               | 5    | 4    | SOUTH
         5      | 5      | WEST                | 4    | 5    | WEST
+        5      | 5      | EAST                | 6    | 5    | EAST
     }
 }

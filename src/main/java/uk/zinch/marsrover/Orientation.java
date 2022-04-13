@@ -1,6 +1,6 @@
 package uk.zinch.marsrover;
 
 public enum Orientation {
-    NORTH, SOUTH, WEST;
+    NORTH, SOUTH, WEST, EAST;
 
 }
