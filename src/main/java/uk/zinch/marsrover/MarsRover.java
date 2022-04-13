@@ -11,10 +11,7 @@ public class MarsRover {
     }
 
     public Position execute(String command) {
-        if (position.orientation().equals(WEST))
-            return new Position(new Coordinates(5, 5).modifyBy(-1, 0), WEST);
-        if (position.orientation().equals(NORTH))
-            return new Position(this.position.coords().modifyBy(0, 1), NORTH);
-        return new Position(new Coordinates(5, 5).modifyBy(0, -1), SOUTH);
+        return this.position.forward();
+
     }
 }

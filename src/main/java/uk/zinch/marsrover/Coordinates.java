@@ -1,7 +1,7 @@
 package uk.zinch.marsrover;
 
 public record Coordinates(int x, int y) {
-    public Coordinates modifyBy(int deltaX, int deltaY) {
-        return new Coordinates(x + deltaX, y + deltaY);
+    public Coordinates modifyBy(Coordinates deltaCoordinates) {
+        return new Coordinates(x + deltaCoordinates.x, y + deltaCoordinates.y);
     }
 }
