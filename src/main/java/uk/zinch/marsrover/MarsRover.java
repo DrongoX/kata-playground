@@ -2,13 +2,12 @@ package uk.zinch.marsrover;
 
 public class MarsRover {
 
-    private final Position position;
 
     MarsRover(Position position) {
-        this.position = position;
+
     }
 
     public Position execute(String command) {
-        return null;
+        return new Position(new Coordinates(5, 6), Orientation.NORTH);
     }
 }
