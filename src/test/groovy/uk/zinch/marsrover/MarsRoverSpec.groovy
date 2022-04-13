@@ -4,6 +4,7 @@ import spock.lang.Specification
 
 import static uk.zinch.marsrover.Orientation.NORTH
 import static uk.zinch.marsrover.Orientation.SOUTH
+import static uk.zinch.marsrover.Orientation.WEST
 
 class MarsRoverSpec extends Specification {
 
@@ -19,5 +20,6 @@ class MarsRoverSpec extends Specification {
         startX | startY | startingOrientation | newX | newY | newOrientation
         5      | 5      | NORTH               | 5    | 6    | NORTH
         5      | 5      | SOUTH               | 5    | 4    | SOUTH
+        5      | 5      | WEST                | 4    | 5    | WEST
     }
 }
